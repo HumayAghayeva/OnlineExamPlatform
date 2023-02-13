@@ -19,7 +19,7 @@ app.UseSwaggerUI(c =>
 });
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-app.UseDefaultFiles();  
+//app.UseDefaultFiles();  
 app.UseRouting();
 
 app.UseAuthorization();
