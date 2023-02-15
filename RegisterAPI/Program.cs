@@ -1,5 +1,6 @@
 
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using RegisterAPI.Interfaces;
 using RegisterAPI.Models;
 using RegisterAPI.Services;
@@ -15,7 +16,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DBConn>(options =>
 {
     //The name of the connection string is taken from appsetting.json under ConnectionStrings
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConn"));
+     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConn"), builder =>
+       {
+           builder.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null);
+       });
     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 });
 builder.Services.AddScoped<IUserService>();
