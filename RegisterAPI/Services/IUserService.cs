@@ -26,10 +26,14 @@ namespace RegisterAPI.Services
         {
             return dBConn.Set<User>().Find(Id);
         }
-
-        public User GetUsers()
+        public User Login(string email,string password)
         {
-            throw new NotImplementedException();
+            var user = dBConn.Set<User>().Where(w=>w.Email==email&w.Password==password).FirstOrDefault();
+            return user;
+        }
+        public List<User> GetUsers()
+        {
+            return dBConn.Set<User>().ToList(); 
         }
 
         public User UpdateUser(User user)

@@ -19,16 +19,24 @@ namespace RegisterAPI.Controllers
 
         // GET: api/<UserController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public List<User> Get()
         {
-            return new string[] { "value1", "value2" };
+            var usr = _user.GetUsers();
+            return usr;
         }
 
+        //[HttpGet]
+        //public User Login(string email, string password)
+        //{
+        //    var usr = _user.Login(email, password);
+        //    return usr;
+        //}
         // GET api/<UserController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public User Get(int id)
         {
-            return "value";
+            var usr = _user.GetUser(id);
+            return usr;
         }
 
         // POST api/<UserController>
