@@ -1,4 +1,3 @@
-
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using RegisterAPI.Interfaces;
@@ -22,6 +21,16 @@ builder.Services.AddDbContext<DBConn>(options =>
        });
     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 });
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "AllowOrigin",
+        builder =>
+        {
+            builder.WithOrigins("*")
+                                 .AllowAnyHeader()
+                                .AllowAnyMethod();
+        });
+});
 builder.Services.AddScoped<IUserService>();
 var app = builder.Build();
 
@@ -31,7 +40,19 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors();
 
+//with a named pocili
+app.UseCors("AllowOrigin");
+
+//Shows UseCors with CorsPolicyBuilder.
+app.UseCors(builder =>
+{
+    builder
+    .AllowAnyOrigin()
+    .AllowAnyMethod()
+    .AllowAnyHeader();
+});
 app.UseHttpsRedirection();
 app.UseDeveloperExceptionPage();
 app.UseAuthorization();

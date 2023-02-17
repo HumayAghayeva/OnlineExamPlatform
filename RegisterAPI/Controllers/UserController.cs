@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 using RegisterAPI.Interfaces;
 using RegisterAPI.Models;
 using RegisterAPI.Services;
@@ -8,6 +9,7 @@ using RegisterAPI.Services;
 namespace RegisterAPI.Controllers
 {
     [Route("api/[controller]")]
+    [EnableCors("AllowOrigin")]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -33,6 +35,7 @@ namespace RegisterAPI.Controllers
         //}
         // GET api/<UserController>/5
         [HttpGet("{id}")]
+        [EnableCors("AllowOrigin")]
         public User Get(int id)
         {
             var usr = _user.GetUser(id);

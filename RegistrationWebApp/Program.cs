@@ -17,11 +17,24 @@ app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v2/swagger.json", "RegisterAPI");
 });
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 //app.UseDefaultFiles();  
 app.UseRouting();
+app.UseCors();
 
+//with a named pocili
+app.UseCors("AllowOrigin");
+
+//Shows UseCors with CorsPolicyBuilder.
+app.UseCors(builder =>
+{
+    builder
+    .AllowAnyOrigin()
+    .AllowAnyMethod()
+    .AllowAnyHeader();
+});
 app.UseAuthorization();
 
 app.MapControllerRoute(
