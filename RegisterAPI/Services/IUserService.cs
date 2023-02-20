@@ -1,7 +1,7 @@
-﻿using RegisterAPI.Interfaces;
-using RegisterAPI.Models;
+﻿using OnlineExamAPI.Interfaces;
+using OnlineExamAPI.Models;
 
-namespace RegisterAPI.Services
+namespace OnlineExamAPI.Services
 {
     public class IUserService : IUser
     {

@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using RegisterAPI.Models;
+using OnlineExamAPI.Models;
 
 #nullable disable
 
-namespace RegisterAPI.Migrations
+namespace OnlineExamAPI.Migrations
 {
     [DbContext(typeof(DBConn))]
     [Migration("20230203130541_first")]
@@ -24,7 +24,7 @@ namespace RegisterAPI.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("RegisterAPI.Models.User", b =>
+            modelBuilder.Entity("OnlineExamAPI.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

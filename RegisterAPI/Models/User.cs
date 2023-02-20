@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace RegisterAPI.Models
+namespace OnlineExamAPI.Models
 {
     public class User
     {

@@ -15,7 +15,7 @@ if (!app.Environment.IsDevelopment())
 app.UseCors(builder => builder.AllowAnyOrigin());  
 app.UseSwaggerUI(c =>
 {
-    c.SwaggerEndpoint("/swagger/v2/swagger.json", "RegisterAPI");
+    c.SwaggerEndpoint("/swagger/v2/swagger.json", "OnlineExamAPI");
 });
 
 app.UseHttpsRedirection();

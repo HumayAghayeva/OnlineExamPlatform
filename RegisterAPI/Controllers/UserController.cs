@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using RegisterAPI.Interfaces;
-using RegisterAPI.Models;
-using RegisterAPI.Services;
+using OnlineExamAPI.Interfaces;
+using OnlineExamAPI.Models;
+using OnlineExamAPI.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace RegisterAPI.Controllers
+namespace OnlineExamAPI.Controllers
 {
     [Route("api/[controller]")]
     [EnableCors("AllowOrigin")]

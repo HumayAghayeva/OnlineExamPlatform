@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace RegisterAPI.Models
+namespace OnlineExamAPI.Models
 {
     public class DBConn:DbContext
     {

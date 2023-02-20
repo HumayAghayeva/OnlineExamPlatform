@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using RegistrationWebApp.Models;
+using OnlineExamPlatFormWeb.Models;
 using System.Diagnostics;
 
-namespace RegistrationWebApp.Controllers
+namespace OnlineExamPlatFormWeb.Controllers
 {
     public class HomeController : Controller
     {
@@ -18,6 +18,10 @@ namespace RegistrationWebApp.Controllers
             return View();
         }
         public IActionResult Login()
+        {
+            return View();
+        }
+        public IActionResult SignUp()
         {
             return View();
         }

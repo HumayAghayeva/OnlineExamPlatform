@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using RegisterAPI.Interfaces;
-using RegisterAPI.Models;
-using RegisterAPI.Services;
+using OnlineExamAPI.Interfaces;
+using OnlineExamAPI.Models;
+using OnlineExamAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

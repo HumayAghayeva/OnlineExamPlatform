@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "RegisterAPI": {
+    "OnlineExamAPI": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace RegisterAPI.Migrations
+namespace OnlineExamAPI.Migrations
 {
     /// <inheritdoc />
     public partial class first : Migration

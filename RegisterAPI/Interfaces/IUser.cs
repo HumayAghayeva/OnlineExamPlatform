@@ -1,6 +1,6 @@
-﻿using RegisterAPI.Models;
+﻿using OnlineExamAPI.Models;
 
-namespace RegisterAPI.Interfaces
+namespace OnlineExamAPI.Interfaces
 {
     public interface IUser
     {

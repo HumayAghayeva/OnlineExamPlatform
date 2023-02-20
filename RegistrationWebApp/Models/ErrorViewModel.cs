@@ -1,4 +1,4 @@
-namespace RegistrationWebApp.Models
+namespace OnlineExamPlatFormWeb.Models
 {
     public class ErrorViewModel
     {

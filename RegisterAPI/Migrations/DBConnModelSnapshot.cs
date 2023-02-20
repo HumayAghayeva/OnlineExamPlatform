@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using RegisterAPI.Models;
+using OnlineExamAPI.Models;
 
 #nullable disable
 
-namespace RegisterAPI.Migrations
+namespace OnlineExamAPI.Migrations
 {
     [DbContext(typeof(DBConn))]
     partial class DBConnModelSnapshot : ModelSnapshot
@@ -21,7 +21,7 @@ namespace RegisterAPI.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("RegisterAPI.Models.User", b =>
+            modelBuilder.Entity("OnlineExamAPI.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
