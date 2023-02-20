@@ -5,9 +5,10 @@ mainApp.controller('LoginController', ['$scope', '$http', function ($scope, $htt
         $http({
             method: "GET",
             Accept:"application/json, text/plain",
-            url: "http://localhost:8068/api/User/1"
+            url: "http://localhost:8068/api/User/" + $scope.Email + "/" + $scope.Password +""
         }).then(function (response) {
-            alert("test")
+            $scope.Fullname = response.data.fullname
+            alert($scope.Fullname)
         }),
             function (error) {
                 alert("error")
