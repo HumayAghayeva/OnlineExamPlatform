@@ -7,19 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\angular\angular.js" />
-    <Content Remove="wwwroot\angular\angular.min.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="wwwroot\angular\angular.js" />
-    <_ContentIncludedByDefault Remove="wwwroot\angular\angular.min.js" />
     <_ContentIncludedByDefault Remove="wwwroot\js\login.js" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\angular\angular.js" />
-    <None Include="wwwroot\angular\angular.min.js" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\API\API.csproj" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -267,6 +264,10 @@
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\angular\" />
   </ItemGroup>
 
 </Project>

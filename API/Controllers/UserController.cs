@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using API.Interfaces;
 using API.Models;
 using API.Services;
+using Domain;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -27,27 +28,25 @@ namespace OnlineExamAPI.Controllers
             return usr;
         }
 
-        //[HttpGet]
-        //public User Login(string email, string password)
-        //{
-        //    var usr = _user.Login(email, password);
-        //    return usr;
-        //}
-        // GET api/<UserController>/5
         [HttpGet("{id}")]
-        [EnableCors("AllowOrigin")]
         public User Get(int id)
         {
             var usr = _user.GetUser(id);
             return usr;
         }
+        [EnableCors("AllowOrigin")]
+        [HttpGet("{email}/{password}")]
+        public User Get(string email, string password)
+        {
+            var usr = _user.Login(email, password);
+            return usr;
+        }
 
-        // POST api/<UserController>
         [HttpPost]
-        //[Route("AddUser")]
-        public void Post(User user)
+        public User Post(User user)
         {
             _user.AddUser(user);
+            return user;    
         }
 
         // PUT api/<UserController>/5

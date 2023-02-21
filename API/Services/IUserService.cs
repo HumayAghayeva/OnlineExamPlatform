@@ -1,5 +1,6 @@
 ﻿using API.Interfaces;
 using API.Models;
+using Domain;
 
 namespace API.Services
 {
@@ -43,10 +44,10 @@ namespace API.Services
             dBConn.SaveChanges();
             return user;
         }
-
-        void IUser.AddUser(User user)
+        User IUser.GetUser(int Id)
         {
             throw new NotImplementedException();
         }
+
     }
 }

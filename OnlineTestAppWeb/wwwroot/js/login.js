@@ -5,13 +5,37 @@ mainApp.controller('LoginController', ['$scope', '$http', function ($scope, $htt
         $http({
             method: "GET",
             Accept:"application/json, text/plain",
-            url: "http://localhost:8068/api/User/" + $scope.Email + "/" + $scope.Password +""
+            url: "http://localhost:8078/api/User/" + $scope.Email + "/" + $scope.Password +""
         }).then(function (response) {
-            $scope.Fullname = response.data.fullname
-            alert($scope.Fullname)
+                $scope.Fullname = response.data.fullname
+                alert($scope.Fullname)
         }),
             function (error) {
                 alert("error")
             }
     }
-   }]);
+
+
+    $scope.SignUp = function () {
+        var data = {
+            'fullname': $scope.FullName,
+            'email': $scope.Email,
+            'password': $scope.Password
+        }
+        $http({
+            method: "POST",
+            data: JSON.stringify(data),
+            Accept: "application/json, text/plain",
+            url: "http://localhost:8078/api/User/"
+        }).then(function (response) {
+            if (response.data)
+                $scope.msg = "Post Data Submitted Successfully!";
+            },
+                function (response) {
+                    $scope.msg = "Service not Exists";
+                    $scope.statusval = response.status;
+                    $scope.statustext = response.statusText;
+                    $scope.headers = response.headers();
+                });
+    }
+}]);

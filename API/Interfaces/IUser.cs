@@ -1,4 +1,5 @@
 ﻿using API.Models;
+using Domain;
 
 namespace API.Interfaces
 {
