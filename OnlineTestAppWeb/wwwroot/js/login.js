@@ -37,40 +37,33 @@ mainApp.controller('LoginController', ['$scope', '$http', function ($scope, $htt
                 $scope.headers = response.headers();
             });
     }
-
-    $scope.Update = function () {
-        var data = {
-            'fullname': $scope.FullName,
-            'email': $scope.Email,
-            'password': $scope.Password
-        }
-        $http({
-            method: "PUT",
-            data: JSON.stringify(data),
-            Accept: "application/json, text/plain",
-            url: "http://localhost:8078/api/User/"
-        }).then(function (response) {
-            if (response.data)
-                $scope.msg = "Post Data Submitted Successfully!";
-        },
-            function (response) {
-                $scope.msg = "Service not Exists";
-                $scope.statusval = response.status;
-                $scope.statustext = response.statusText;
-                $scope.headers = response.headers();
-            });
-    }
-
-    $scope.records = [];
+    $scope.users = [];
         $http({
             method: "GET",
             Accept: "application/json, text/plain",
             url: "http://localhost:8078/api/User/"
         }).then(function (response) {
-            $scope.records = response.data;
+            $scope.users = response.data;
         },
             function (response) {
                 $scope.msg = "Service not Exists";
             });
-
+    $scope.UpdateData = function (user) {
+        data = {
+            'id': user.id,
+            'fullname': user.fullname,
+            'email': user.email,
+            'password': user.password
+        }
+        $http({
+            method: 'PUT',
+            url: "http://localhost:8078/api/User/",
+            data: JSON.stringify(data),
+            Accept: "application/json, text/plain",
+        }).then(function (response) {
+            alert(response.data.email)
+        }, function (response) {
+            console.log(response);
+        });
+    };
 }]);

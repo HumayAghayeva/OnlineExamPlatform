@@ -39,7 +39,6 @@ namespace API.Services
 
         public User UpdateUser(User user)
         {
-
             dBConn.Set<User>().Update(user);
             dBConn.SaveChanges();
             return user;

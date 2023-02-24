@@ -1,9 +1,20 @@
-﻿
-<div class="container" ng-app="mainApp" ng-controller="LoginController">
-    <h2>Here is the string list</h2>
-    <ul>
-        <li ng-repeat="record in records">
-            {{record.fullname}}
-        </li>
-    </ul>
+﻿<div class="container" ng-app="mainApp" ng-controller="LoginController">
+    <table cellpadding="0" cellspacing="0" border="1" >
+        <tr>
+            <th>Id</th>
+            <th>FullName</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Edit</th>
+        </tr>
+        <tbody ng-repeat="user in users track by $index">
+            <tr>
+                <td><input type="text" name="id" placeholder="{{user.id}}" ng-model="user.id" /></td>
+                <td><input type="text" name="fullname" placeholder="{{user.fullname}}" ng-model="user.fullname" /></td>
+                <td><input type="text" name="email" placeholder="{{user.email}}" ng-model="user.email" /></td>
+                <td><input type="text" name="password" placeholder="{{user.password}}" ng-model="user.password" /></td>
+                <td><input type="submit" ng-click="UpdateData(user)" /></td>
+            </tr>
+        </tbody>
+    </table>
 </div>

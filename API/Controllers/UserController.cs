@@ -50,9 +50,11 @@ namespace OnlineExamAPI.Controllers
         }
 
         // PUT api/<UserController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public User Put(User user)
         {
+            _user.UpdateUser(user);
+            return user;
         }
 
         // DELETE api/<UserController>/5
